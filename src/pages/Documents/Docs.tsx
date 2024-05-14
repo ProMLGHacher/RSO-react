@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom"
-import { useAppSelector } from "../../app/store/storeHooks"
-
 
 const Docs = () => {
-
-    const docs = useAppSelector(state => state.auth.user?.documents)
-
     return (
         <div className="container">
             <div style={{

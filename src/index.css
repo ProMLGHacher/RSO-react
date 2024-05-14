@@ -29,3 +29,39 @@ body,
 img {
   width: 100%;
 }
+
+input[type='text'] {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid grey;
+}
+input[type='password'] {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid grey;
+}
+input[type='email'] {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid grey;
+}
+
+button {
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid grey;
+}
+
+select {
+  padding: 20px;
+  border-radius: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  border: 1px solid grey;
+}
+
+select::-ms-expand {
+  display: none;
+}

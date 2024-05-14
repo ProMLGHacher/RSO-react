@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { $api } from "../../shared/api/api"
+import { useNavigate } from "react-router-dom"
 
 export const NewQuestion = () => {
 
@@ -14,9 +16,24 @@ export const NewQuestion = () => {
         setRightAnswerIndex(0)
     }, [type])
 
+    const navigate = useNavigate()
+
 
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} className="container">
+            <div style={{
+                marginTop: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '20px',
+                padding: '20px',
+                backgroundColor: '#C67C4E',
+                borderRadius: '12px',
+                color: 'white',
+                fontSize: '30px'
+            }}>
+                <p>Добавить вопрос</p>
+            </div>
             <input required value={question} onChange={e => { setQuestion(e.target.value) }} type="text" placeholder="Вопрос" />
             <select value={type} onChange={e => { setType(e.target.value as ("Theoretical" | "Practical")) }}>
                 <option value="Practical">Практический</option>
@@ -56,6 +73,17 @@ export const NewQuestion = () => {
                         </div>
                     </>
             }
+            <button onClick={() => {
+                if (!question) return
+                if (type == 'Theoretical' && answers.length < 1) return
+                if (type == 'Practical' && answers.length < 2) return
+                $api.post('/campapi/question', {
+                    "description": question,
+                    "type": type,
+                    "rightAnswerIndex": rightAnswerIndex,
+                    "answers": answers
+                }).then(_ => navigate('/tasks'))
+            }}>Доабвить</button>
         </div>
     )
 }

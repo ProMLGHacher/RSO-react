@@ -5,7 +5,6 @@ import Main, { navigation } from "../pages/Main/Main"
 import Reg from "../pages/reg/Reg"
 import { useEffect } from "react"
 import { getUserThunk } from "../features/authorization/getUserThunk"
-import { logOut } from "../features/authorization/authSlice"
 import UploadDoc from "../pages/UploadDoc/UploadDoc"
 import { NewQuestion } from "../pages/newQuestion/NewQuestion"
 

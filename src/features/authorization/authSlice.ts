@@ -69,7 +69,7 @@ export const authSlice = createSlice({
             localStorage.setItem('refreshToken', action.payload.tokens.refreshToken!)
             localStorage.setItem('accessToken', action.payload.tokens.accessToken!)
         })
-        builder.addCase(loginThunk.rejected, (state, payload) => {
+        builder.addCase(loginThunk.rejected, (_, payload) => {
             alert(payload.payload)
         })
         builder.addCase(signUpThunk.fulfilled, (state, action) => {
@@ -84,7 +84,7 @@ export const authSlice = createSlice({
             localStorage.setItem('refreshToken', action.payload.tokens.refreshToken!)
             localStorage.setItem('accessToken', action.payload.tokens.accessToken!)
         })
-        builder.addCase(signUpThunk.rejected, (state, payload) => {
+        builder.addCase(signUpThunk.rejected, (_, payload) => {
             alert(payload.payload)
         })
         builder.addCase(getUserThunk.fulfilled, (state, action) => {

@@ -24,9 +24,26 @@ const Reg = () => {
   }
 
   return (
-    <form onSubmit={submit}>
+    <form className='container' onSubmit={submit} style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '20px'
+    }}>
+      <div style={{
+        marginTop: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '20px',
+        padding: '20px',
+        backgroundColor: '#C67C4E',
+        borderRadius: '12px',
+        color: 'white',
+        fontSize: '30px'
+      }}>
+        <p>Регистрация</p>
+      </div>
       <input placeholder='фио' value={fullname} onChange={e => setFullname(e.target.value)} type="text" />
-      <input placeholder='mail' value={mail} onChange={e => setMail(e.target.value)} type="text" />
+      <input placeholder='mail' value={mail} onChange={e => setMail(e.target.value)} type="email" />
       <input placeholder='пароль' value={password} onChange={e => setPassword(e.target.value)} type="password" />
       <select onChange={e => setRole(e.target.value as UserRole)}>
         {
