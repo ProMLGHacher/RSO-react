@@ -41,8 +41,8 @@ const Profile = () => {
                         }} />
                         {user?.urlIcon && <img style={{ borderRadius: '50%', aspectRatio: '1/1' }} src={user?.urlIcon} alt="" />}
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px', height: 'fit-content' }}>
-                        <p style={{ fontSize: '28px', fontWeight: 'bold', textAlign: 'end', }}>{user?.email}</p>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px', height: 'fit-content', overflowX: 'auto', width: '100%' }}>
+                        <p style={{ fontSize: '28px', fontWeight: 'bold', textAlign: 'end', width: '100%', overflowX: 'scroll' }}>{user?.email} sdk;lsk;ljikhbuikyghgv</p>
                     </div>
                 </div>
                 <div style={{
